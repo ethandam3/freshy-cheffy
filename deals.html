@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary": "#ebf3ff","outline-variant": "#aeadaa","on-secondary-container": "#5f4200",
+          "secondary-dim": "#6a4a00","secondary": "#795500","surface": "#f8f6f2",
+          "inverse-primary": "#67bafd","secondary-container": "#ffc967","on-error": "#ffefee",
+          "on-surface-variant": "#5b5c59","on-tertiary-fixed-variant": "#145b73","error-dim": "#9f0519",
+          "on-tertiary-container": "#005169","tertiary-fixed": "#a3e0fc","tertiary": "#20627b",
+          "primary-fixed": "#67bafd","surface-container": "#e9e8e4","primary": "#006094",
+          "on-surface": "#2e2f2d","on-secondary": "#fff1de","surface-bright": "#f8f6f2",
+          "surface-container-high": "#e4e2de","surface-container-lowest": "#ffffff",
+          "inverse-surface": "#0e0e0d","tertiary-container": "#a3e0fc","on-tertiary": "#e4f5ff",
+          "error": "#b31b25","primary-container": "#67bafd","surface-container-low": "#f2f1ec",
+          "on-primary-fixed-variant": "#003f63","secondary-fixed-dim": "#ffb702",
+          "on-tertiary-fixed": "#003d50","tertiary-fixed-dim": "#95d2ee",
+          "surface-container-highest": "#deddd8","on-error-container": "#570008",
+          "on-background": "#2e2f2d","inverse-on-surface": "#9e9d99","on-primary-fixed": "#001d31",
+          "outline": "#777774","background": "#f8f6f2","error-container": "#fb5151",
+          "on-secondary-fixed-variant": "#6b4b00","on-secondary-fixed": "#473000",
+          "surface-tint": "#006094","surface-variant": "#deddd8","tertiary-dim": "#0b566e",
+          "primary-dim": "#005482","secondary-fixed": "#ffc967","surface-dim": "#d5d4d0",
+          "primary-fixed-dim": "#58acef","on-primary-container": "#003655"
+        },
+        fontFamily: {"headline": ["Fredoka"],"body": ["Lexend"],"label": ["Lexend"],"brand": ["Plus Jakarta Sans"]},
+        borderRadius: {"DEFAULT": "1rem","lg": "2rem","xl": "3rem","full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #deddd8; border-radius: 10px; }
+  .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20">
+
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-70 bg-[#f8f6f2] backdrop-blur-xl shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)]">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+    <div class="text-2xl font-black text-[#006094] tracking-tight font-brand">Freshy Cheffy</div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Home</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Recipes</a>
+      <a class="text-[#006094] font-bold border-b-4 border-[#795500] pb-1" href="#">Deals</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Impact</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Community</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="relative group">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+        <input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary w-48 transition-all duration-300" placeholder="Find a farm..." type="text"/>
+      </div>
+      <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20">Sign Up</button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-24 min-h-screen max-w-[1440px] mx-auto flex flex-col">
+  <!-- Header & Toggle Section -->
+  <header class="px-8 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div class="max-w-2xl">
+      <h1 class="font-headline text-6xl text-primary leading-tight">Coastal Harvest <span class="text-secondary">Deals</span></h1>
+      <p class="text-on-surface-variant text-lg mt-2 tracking-wide">Support local Long Beach farmers by claiming perfectly imperfect "ugly produce" boxes at sea-level prices.</p>
+    </div>
+    <!-- Filter Toggle -->
+    <div class="bg-surface-container-high p-1.5 rounded-full flex items-center shadow-inner">
+      <button id="btn-boxes" onclick="switchMode('boxes')" class="px-6 py-2 rounded-full bg-white text-primary font-bold shadow-sm transition-all duration-300 flex items-center gap-2">
+        <span class="material-symbols-outlined text-lg">package_2</span>Boxes
+      </button>
+      <button id="btn-single" onclick="switchMode('single')" class="px-6 py-2 rounded-full text-on-surface-variant font-medium hover:text-primary transition-all duration-300 flex items-center gap-2">
+        <span class="material-symbols-outlined text-lg">eco</span>Single Items
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Map & List Layout -->
+  <section class="flex-grow px-8 pb-12 grid grid-cols-12 gap-8 h-[700px]">
+    <!-- Side Panel -->
+    <div class="col-span-12 lg:col-span-4 flex flex-col gap-4 overflow-hidden">
+
+      <!-- Price Predictor Widget -->
+      <div class="bg-surface-container-low p-6 rounded-2xl mb-2 border border-primary/10 shadow-sm">
+        <h3 class="font-headline text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary">payments</span>
+          What's a fair price near you?
+        </h3>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <select id="produce-select" class="bg-white border-none rounded-full text-sm font-body px-4 py-2 focus:ring-2 focus:ring-primary shadow-sm">
+            <option value="">Select Produce</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="spinach">Spinach</option>
+            <option value="carrot">Carrot</option>
+            <option value="zucchini">Zucchini</option>
+            <option value="tomato">Tomato</option>
+          </select>
+          <select id="season-select" class="bg-white border-none rounded-full text-sm font-body px-4 py-2 focus:ring-2 focus:ring-primary shadow-sm">
+            <option value="">Season</option>
+            <option value="1">Spring</option>
+            <option value="2">Summer</option>
+            <option value="3">Fall</option>
+          </select>
+        </div>
+        <button onclick="predictPrice()" class="w-full bg-primary text-on-primary font-bold py-2 rounded-full hover:brightness-110 transition-all shadow-md mb-4">
+          Predict Price
+        </button>
+
+        <!-- Result area - hidden until prediction runs -->
+        <div id="price-result" class="space-y-1 pt-3 border-t border-primary/5 hidden">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-on-surface-variant">Regular Price:</span>
+            <span id="regular-price" class="font-bold text-on-surface">—</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-on-surface-variant">Ugly Produce Price:</span>
+            <span id="ugly-price" class="font-black text-[#0077B6]">—</span>
+          </div>
+          <p id="active-mode-label" class="text-xs text-on-surface-variant mt-2 text-center"></p>
+        </div>
+
+        <!-- Error message -->
+        <div id="price-error" class="hidden text-sm text-red-500 text-center pt-2">
+          Please select both a produce item and a season.
+        </div>
+
+        <!-- Loading state -->
+        <div id="price-loading" class="hidden text-sm text-primary text-center pt-2 animate-pulse">
+          Predicting with ML model...
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="font-headline text-2xl text-on-surface">Available Near You</h2>
+        <span class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">8 Deals Found</span>
+      </div>
+
+      <div class="flex-grow overflow-y-auto custom-scrollbar flex flex-col gap-4 pr-2">
+        <!-- Deal Card 1 -->
+        <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-secondary">
+          <div class="flex justify-between items-start mb-4 flex-wrap">
+            <div>
+              <h3 class="font-headline text-xl text-primary">The Shoreline Medley</h3>
+              <p class="text-sm text-on-surface-variant">Sunny Side Farms • 0.8 miles</p>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span id="badge-1" class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200 hidden">— below fair price</span>
+              <span class="text-2xl font-black text-secondary">$4.00</span>
+            </div>
+          </div>
+          <p class="text-sm mb-4 line-clamp-2">5lbs of "curvy" carrots, slightly bruised bell peppers, and oversized kale bundles.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🥕</div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🫑</div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🥬</div>
+            </div>
+            <button class="bg-secondary text-on-secondary px-5 py-2 rounded-full text-sm font-bold shadow-md hover:brightness-110 transition-all">Claim Box</button>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-tertiary">
+          <div class="flex justify-between items-start mb-4 flex-wrap">
+            <div>
+              <h3 class="font-headline text-xl text-primary">Orchard Outcasts</h3>
+              <p class="text-sm text-on-surface-variant">Ocean Breeze Groves • 1.2 miles</p>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span id="badge-2" class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200 hidden">— below fair price</span>
+              <span class="text-2xl font-black text-secondary">$6.50</span>
+            </div>
+          </div>
+          <p class="text-sm mb-4 line-clamp-2">Small citrus fruits with scarred skin—perfect for juicing and zest! Includes oranges and limes.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🍊</div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🍋</div>
+            </div>
+            <button class="bg-secondary text-on-secondary px-5 py-2 rounded-full text-sm font-bold shadow-md hover:brightness-110 transition-all">Claim Box</button>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-primary">
+          <div class="flex justify-between items-start mb-4 flex-wrap">
+            <div>
+              <h3 class="font-headline text-xl text-primary">Root Revival Box</h3>
+              <p class="text-sm text-on-surface-variant">Dune Root Co. • 2.5 miles</p>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span id="badge-3" class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200 hidden">— below fair price</span>
+              <span class="text-2xl font-black text-secondary">$3.25</span>
+            </div>
+          </div>
+          <p class="text-sm mb-4 line-clamp-2">Dirty, oddly shaped potatoes and beets. High nutritional value, just needs a good scrub.</p>
+          <div class="flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🥔</div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-[10px] font-bold">🍠</div>
+            </div>
+            <button class="bg-secondary text-on-secondary px-5 py-2 rounded-full text-sm font-bold shadow-md hover:brightness-110 transition-all">Claim Box</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map View -->
+    <div class="col-span-12 lg:col-span-8 relative rounded-lg overflow-hidden shadow-2xl border-4 border-white">
+      <div class="absolute inset-0 bg-[#e0f2f1] overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center opacity-60 mix-blend-multiply" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADuHXsB5ItmVuqORO0dZIE0YBv9FOu-1LDBCcWZjZkZXcGkxyUrpEhoJ31SomWnSpUhdqq74_HNbgLee7_JejTMQlPLFOndAVV7YI91ITnGc3VKdQy9obbj8Qp5tj-NeXlAXSsWTLJNSjrMtiGCUu0YEpiUPHFVGfOAefFWeiKsEHwJTPhKLSmxW9kB6qy1LGb36X3-tojXeyvJH_vtgaW7yAF-NQ9Cdx7a_VJWVfmWzbgrI_fslODQmLFmfHKTlZCtVe9GOH9ijx0')"></div>
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
+        <!-- Pin 1 -->
+        <div class="absolute top-[30%] left-[40%] group">
+          <div class="relative flex items-center justify-center">
+            <div class="absolute w-12 h-12 bg-secondary/20 rounded-full animate-ping"></div>
+            <div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+            </div>
+          </div>
+          <div class="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity bg-white p-3 rounded-lg shadow-xl pointer-events-none z-10">
+            <p class="font-bold text-primary text-sm">Sunny Side Farms</p>
+            <p class="text-xs text-on-surface-variant">3 boxes available</p>
+          </div>
+        </div>
+        <!-- Pin 2 -->
+        <div class="absolute top-[60%] left-[25%] group">
+          <div class="relative flex items-center justify-center">
+            <div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+            </div>
+          </div>
+          <div class="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity bg-white p-3 rounded-lg shadow-xl pointer-events-none z-10">
+            <p class="font-bold text-primary text-sm">Ocean Breeze Groves</p>
+            <p class="text-xs text-on-surface-variant">Last box left!</p>
+          </div>
+        </div>
+        <!-- Pin 3 -->
+        <div class="absolute top-[45%] left-[70%] group">
+          <div class="relative flex items-center justify-center">
+            <div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+            </div>
+          </div>
+          <div class="absolute bottom-full mb-4 left-1/2 -translate-x-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity bg-white p-3 rounded-lg shadow-xl pointer-events-none z-10">
+            <p class="font-bold text-primary text-sm">Dune Root Co.</p>
+            <p class="text-xs text-on-surface-variant">2 boxes available</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute top-6 left-6 flex flex-col gap-2">
+        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors">
+          <span class="material-symbols-outlined">add</span>
+        </button>
+        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors">
+          <span class="material-symbols-outlined">remove</span>
+        </button>
+      </div>
+      <div class="absolute bottom-6 right-6">
+        <button class="bg-white/90 backdrop-blur px-6 py-3 rounded-full flex items-center gap-2 text-primary font-bold shadow-xl border border-white/50">
+          <span class="material-symbols-outlined">my_location</span>Center Near Me
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-[#f8f6f2] w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 rounded-t-[32px]">
+  <div class="flex flex-col items-center md:items-start gap-4">
+    <div class="text-xl font-bold text-[#006094] font-brand">Freshy Cheffy</div>
+    <p class="font-body text-sm uppercase tracking-widest text-[#2e2f2d]/60 max-w-xs text-center md:text-left">© 2024 Freshy Cheffy. Inspired by the Modern Mariner.</p>
+  </div>
+  <div class="flex flex-wrap justify-center gap-8">
+    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">About Our Mission</a>
+    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Contact Sea Support</a>
+    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Local Sourcing</a>
+    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+  </div>
+  <div class="flex gap-4">
+    <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+      <span class="material-symbols-outlined text-xl">rss_feed</span>
+    </button>
+    <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+      <span class="material-symbols-outlined text-xl">share</span>
+    </button>
+  </div>
+</footer>
+
+<script>
+  const FLASK_URL = 'http://127.0.0.1:5000';
+  let currentMode = 'boxes';
+  let lastRegularPrice = null;
+  let lastUglyPrice = null;
+  const cardPrices = [4.00, 6.50, 3.25];
+
+  function switchMode(mode) {
+    currentMode = mode;
+    const btnBoxes = document.getElementById('btn-boxes');
+    const btnSingle = document.getElementById('btn-single');
+    if (mode === 'boxes') {
+      btnBoxes.classList.add('bg-white', 'text-primary', 'font-bold', 'shadow-sm');
+      btnBoxes.classList.remove('text-on-surface-variant', 'font-medium');
+      btnSingle.classList.remove('bg-white', 'text-primary', 'font-bold', 'shadow-sm');
+      btnSingle.classList.add('text-on-surface-variant', 'font-medium');
+    } else {
+      btnSingle.classList.add('bg-white', 'text-primary', 'font-bold', 'shadow-sm');
+      btnSingle.classList.remove('text-on-surface-variant', 'font-medium');
+      btnBoxes.classList.remove('bg-white', 'text-primary', 'font-bold', 'shadow-sm');
+      btnBoxes.classList.add('text-on-surface-variant', 'font-medium');
+    }
+    if (lastRegularPrice !== null) updateDisplay();
+  }
+
+  function updateDisplay() {
+    const activePrice = currentMode === 'boxes' ? lastUglyPrice : lastRegularPrice;
+    const label = currentMode === 'boxes' ? 'Showing ugly produce prices' : 'Showing regular prices';
+    document.getElementById('active-mode-label').textContent = label;
+    updateBadges(activePrice);
+  }
+
+  function updateBadges(fairPrice) {
+    const boxSavings = [0.32, 0.22, 0.18];
+    const singleSavings = [0.15, 0.10, 0.12];
+    const savings = currentMode === 'boxes' ? boxSavings : singleSavings;
+    for (let i = 1; i <= 3; i++) {
+      const badge = document.getElementById('badge-' + i);
+      if (fairPrice) {
+        const pct = Math.round(savings[i - 1] * 100);
+        badge.textContent = pct + '% below fair price';
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+  }
+
+  async function predictPrice() {
+    const item = document.getElementById('produce-select').value;
+    const season = document.getElementById('season-select').value;
+
+    document.getElementById('price-error').classList.add('hidden');
+    document.getElementById('price-result').classList.add('hidden');
+
+    if (!item || !season) {
+      document.getElementById('price-error').classList.remove('hidden');
+      return;
+    }
+
+    document.getElementById('price-loading').classList.remove('hidden');
+
+    try {
+      // Fetch regular price
+      const regularRes = await fetch(FLASK_URL + '/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ item: item, season: parseInt(season), is_ugly: 0 })
+      });
+      const regularData = await regularRes.json();
+
+      // Fetch ugly produce price
+      const uglyRes = await fetch(FLASK_URL + '/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ item: item, season: parseInt(season), is_ugly: 1 })
+      });
+      const uglyData = await uglyRes.json();
+
+      lastRegularPrice = regularData.predicted_price;
+      lastUglyPrice = uglyData.predicted_price;
+
+      document.getElementById('regular-price').textContent = '$' + lastRegularPrice.toFixed(2) + ' / lb';
+      document.getElementById('ugly-price').textContent = '$' + lastUglyPrice.toFixed(2) + ' / lb';
+      document.getElementById('price-loading').classList.add('hidden');
+      document.getElementById('price-result').classList.remove('hidden');
+
+      updateDisplay();
+
+    } catch (err) {
+      document.getElementById('price-loading').classList.add('hidden');
+      document.getElementById('price-error').textContent = 'Could not reach the ML model. Make sure Flask is running.';
+      document.getElementById('price-error').classList.remove('hidden');
+    }
+  }
+</script>
+</body></html>

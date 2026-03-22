@@ -42,40 +42,34 @@
   .custom-scrollbar::-webkit-scrollbar { width: 6px; }
   .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
   .custom-scrollbar::-webkit-scrollbar-thumb { background: #deddd8; border-radius: 10px; }
-  .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/20">
 
-<!-- Top Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-opacity-70 bg-[#f8f6f2] backdrop-blur-xl shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)]">
   <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
-    <div class="text-2xl font-black text-[#006094] tracking-tight font-brand">Freshy Cheffy</div>
+    <div class="flex items-center gap-3">
+      <img src="/bear.png" alt="Freshy Cheffy Bear" class="w-12 h-12 object-contain"/>
+      <div class="text-2xl font-black text-[#006094] tracking-tight font-brand uppercase leading-5">FRESHY<br/>CHEFFY</div>
+    </div>
     <div class="hidden md:flex items-center gap-8">
-      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Home</a>
-      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Recipes</a>
-      <a class="text-[#006094] font-bold border-b-4 border-[#795500] pb-1" href="#">Deals</a>
-      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Impact</a>
-      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="#">Community</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="/index">Home</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="/about">About</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="/recipes">Recipes</a>
+      <a class="text-[#006094] font-bold border-b-4 border-[#795500] pb-1" href="/">Deals</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="/impact">Impact</a>
+      <a class="text-[#2e2f2d] font-medium hover:text-[#006094] transition-all duration-300 rounded-full px-4 py-1" href="/community">Community</a>
     </div>
-    <div class="flex items-center gap-4">
-      <div class="relative group">
-        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-        <input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary w-48 transition-all duration-300" placeholder="Find a farm..." type="text"/>
-      </div>
-      <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold scale-95 active:scale-90 transition-transform shadow-lg shadow-primary/20">Sign Up</button>
-    </div>
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold shadow-lg shadow-primary/20">Sign Up</button>
   </div>
 </nav>
 
 <main class="pt-24 min-h-screen max-w-[1440px] mx-auto flex flex-col">
-  <!-- Header & Toggle Section -->
   <header class="px-8 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
     <div class="max-w-2xl">
       <h1 class="font-headline text-6xl text-primary leading-tight">Coastal Harvest <span class="text-secondary">Deals</span></h1>
       <p class="text-on-surface-variant text-lg mt-2 tracking-wide">Support local Long Beach farmers by claiming perfectly imperfect "ugly produce" boxes at sea-level prices.</p>
     </div>
-    <!-- Filter Toggle -->
     <div class="bg-surface-container-high p-1.5 rounded-full flex items-center shadow-inner">
       <button id="btn-boxes" onclick="switchMode('boxes')" class="px-6 py-2 rounded-full bg-white text-primary font-bold shadow-sm transition-all duration-300 flex items-center gap-2">
         <span class="material-symbols-outlined text-lg">package_2</span>Boxes
@@ -86,12 +80,8 @@
     </div>
   </header>
 
-  <!-- Main Map & List Layout -->
   <section class="flex-grow px-8 pb-12 grid grid-cols-12 gap-8 h-[700px]">
-    <!-- Side Panel -->
     <div class="col-span-12 lg:col-span-4 flex flex-col gap-4 overflow-hidden">
-
-      <!-- Price Predictor Widget -->
       <div class="bg-surface-container-low p-6 rounded-2xl mb-2 border border-primary/10 shadow-sm">
         <h3 class="font-headline text-lg text-primary mb-4 flex items-center gap-2">
           <span class="material-symbols-outlined text-secondary">payments</span>
@@ -117,8 +107,6 @@
         <button onclick="predictPrice()" class="w-full bg-primary text-on-primary font-bold py-2 rounded-full hover:brightness-110 transition-all shadow-md mb-4">
           Predict Price
         </button>
-
-        <!-- Result area - hidden until prediction runs -->
         <div id="price-result" class="space-y-1 pt-3 border-t border-primary/5 hidden">
           <div class="flex justify-between items-center text-sm">
             <span class="text-on-surface-variant">Regular Price:</span>
@@ -130,16 +118,8 @@
           </div>
           <p id="active-mode-label" class="text-xs text-on-surface-variant mt-2 text-center"></p>
         </div>
-
-        <!-- Error message -->
-        <div id="price-error" class="hidden text-sm text-red-500 text-center pt-2">
-          Please select both a produce item and a season.
-        </div>
-
-        <!-- Loading state -->
-        <div id="price-loading" class="hidden text-sm text-primary text-center pt-2 animate-pulse">
-          Predicting with ML model...
-        </div>
+        <div id="price-error" class="hidden text-sm text-red-500 text-center pt-2">Please select both a produce item and a season.</div>
+        <div id="price-loading" class="hidden text-sm text-primary text-center pt-2 animate-pulse">Predicting with ML model...</div>
       </div>
 
       <div class="flex items-center justify-between mb-2">
@@ -148,7 +128,6 @@
       </div>
 
       <div class="flex-grow overflow-y-auto custom-scrollbar flex flex-col gap-4 pr-2">
-        <!-- Deal Card 1 -->
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-secondary">
           <div class="flex justify-between items-start mb-4 flex-wrap">
             <div>
@@ -171,7 +150,6 @@
           </div>
         </div>
 
-        <!-- Deal Card 2 -->
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-tertiary">
           <div class="flex justify-between items-start mb-4 flex-wrap">
             <div>
@@ -193,7 +171,6 @@
           </div>
         </div>
 
-        <!-- Deal Card 3 -->
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] hover:scale-[1.02] transition-transform cursor-pointer border-l-8 border-primary">
           <div class="flex justify-between items-start mb-4 flex-wrap">
             <div>
@@ -217,12 +194,10 @@
       </div>
     </div>
 
-    <!-- Map View -->
     <div class="col-span-12 lg:col-span-8 relative rounded-lg overflow-hidden shadow-2xl border-4 border-white">
       <div class="absolute inset-0 bg-[#e0f2f1] overflow-hidden">
         <div class="w-full h-full bg-cover bg-center opacity-60 mix-blend-multiply" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADuHXsB5ItmVuqORO0dZIE0YBv9FOu-1LDBCcWZjZkZXcGkxyUrpEhoJ31SomWnSpUhdqq74_HNbgLee7_JejTMQlPLFOndAVV7YI91ITnGc3VKdQy9obbj8Qp5tj-NeXlAXSsWTLJNSjrMtiGCUu0YEpiUPHFVGfOAefFWeiKsEHwJTPhKLSmxW9kB6qy1LGb36X3-tojXeyvJH_vtgaW7yAF-NQ9Cdx7a_VJWVfmWzbgrI_fslODQmLFmfHKTlZCtVe9GOH9ijx0')"></div>
         <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 pointer-events-none"></div>
-        <!-- Pin 1 -->
         <div class="absolute top-[30%] left-[40%] group">
           <div class="relative flex items-center justify-center">
             <div class="absolute w-12 h-12 bg-secondary/20 rounded-full animate-ping"></div>
@@ -235,7 +210,6 @@
             <p class="text-xs text-on-surface-variant">3 boxes available</p>
           </div>
         </div>
-        <!-- Pin 2 -->
         <div class="absolute top-[60%] left-[25%] group">
           <div class="relative flex items-center justify-center">
             <div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
@@ -247,7 +221,6 @@
             <p class="text-xs text-on-surface-variant">Last box left!</p>
           </div>
         </div>
-        <!-- Pin 3 -->
         <div class="absolute top-[45%] left-[70%] group">
           <div class="relative flex items-center justify-center">
             <div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
@@ -261,12 +234,8 @@
         </div>
       </div>
       <div class="absolute top-6 left-6 flex flex-col gap-2">
-        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors">
-          <span class="material-symbols-outlined">add</span>
-        </button>
-        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors">
-          <span class="material-symbols-outlined">remove</span>
-        </button>
+        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined">add</span></button>
+        <button class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md text-primary hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined">remove</span></button>
       </div>
       <div class="absolute bottom-6 right-6">
         <button class="bg-white/90 backdrop-blur px-6 py-3 rounded-full flex items-center gap-2 text-primary font-bold shadow-xl border border-white/50">
@@ -277,27 +246,48 @@
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-[#f8f6f2] w-full px-12 py-16 flex flex-col md:flex-row justify-between items-center gap-8 rounded-t-[32px]">
-  <div class="flex flex-col items-center md:items-start gap-4">
-    <div class="text-xl font-bold text-[#006094] font-brand">Freshy Cheffy</div>
-    <p class="font-body text-sm uppercase tracking-widest text-[#2e2f2d]/60 max-w-xs text-center md:text-left">© 2024 Freshy Cheffy. Inspired by the Modern Mariner.</p>
-  </div>
-  <div class="flex flex-wrap justify-center gap-8">
-    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">About Our Mission</a>
-    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Contact Sea Support</a>
-    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Local Sourcing</a>
-    <a class="font-body text-sm uppercase tracking-widest text-[#2e2f2d] hover:text-[#006094] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-  </div>
-  <div class="flex gap-4">
-    <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-      <span class="material-symbols-outlined text-xl">rss_feed</span>
-    </button>
-    <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-      <span class="material-symbols-outlined text-xl">share</span>
-    </button>
+<footer class="bg-primary w-full px-12 py-16">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-3 flex flex-col gap-4">
+      <div class="flex items-center gap-2">
+        <img src="/bear.png" alt="Freshy Cheffy Bear" class="w-14 h-14 object-contain"/>
+        <div class="font-headline text-3xl text-stone-100 font-black uppercase leading-9">Freshy<br/>Cheffy</div>
+      </div>
+      <p class="text-stone-100/80 text-sm leading-6">© 2024 Freshy Cheffy. Inspired by the Modern Mariner.</p>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Company</div>
+      <a href="/about" class="text-stone-100/80 text-sm hover:text-white transition-colors">Our Mission</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Sustainability Report</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Community</div>
+      <a href="#" class="text-white underline text-sm">Local Sourcing</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Privacy Policy</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Stay Salty</div>
+      <div class="flex gap-4">
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">rss_feed</span></button>
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">share</span></button>
+      </div>
+    </div>
+    <div class="col-span-6 md:col-span-3 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">The Shoreline Mailer</div>
+      <div class="flex h-9">
+        <input type="email" placeholder="Email" class="flex-1 px-4 py-2.5 bg-white/10 rounded-l-full border-none outline-none text-white placeholder-white/40"/>
+        <button class="px-4 py-2.5 bg-yellow-800 rounded-r-full"><span class="material-symbols-outlined text-stone-100 text-sm">arrow_forward</span></button>
+      </div>
+    </div>
   </div>
 </footer>
+
+<div class="fixed bottom-8 left-8 z-50">
+  <button class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
+    <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">auto_awesome</span>
+    <span class="absolute left-16 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-[32px] shadow-xl px-4 py-2 text-primary text-sm font-bold whitespace-nowrap">Ask Cheffy AI</span>
+  </button>
+</div>
 
 <script>
   const FLASK_URL = 'http://127.0.0.1:5000';
@@ -350,44 +340,33 @@
   async function predictPrice() {
     const item = document.getElementById('produce-select').value;
     const season = document.getElementById('season-select').value;
-
     document.getElementById('price-error').classList.add('hidden');
     document.getElementById('price-result').classList.add('hidden');
-
     if (!item || !season) {
       document.getElementById('price-error').classList.remove('hidden');
       return;
     }
-
     document.getElementById('price-loading').classList.remove('hidden');
-
     try {
-      // Fetch regular price
       const regularRes = await fetch(FLASK_URL + '/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ item: item, season: parseInt(season), is_ugly: 0 })
       });
       const regularData = await regularRes.json();
-
-      // Fetch ugly produce price
       const uglyRes = await fetch(FLASK_URL + '/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ item: item, season: parseInt(season), is_ugly: 1 })
       });
       const uglyData = await uglyRes.json();
-
       lastRegularPrice = regularData.predicted_price;
       lastUglyPrice = uglyData.predicted_price;
-
       document.getElementById('regular-price').textContent = '$' + lastRegularPrice.toFixed(2) + ' / lb';
       document.getElementById('ugly-price').textContent = '$' + lastUglyPrice.toFixed(2) + ' / lb';
       document.getElementById('price-loading').classList.add('hidden');
       document.getElementById('price-result').classList.remove('hidden');
-
       updateDisplay();
-
     } catch (err) {
       document.getElementById('price-loading').classList.add('hidden');
       document.getElementById('price-error').textContent = 'Could not reach the ML model. Make sure Flask is running.';

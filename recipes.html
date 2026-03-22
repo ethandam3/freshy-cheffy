@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freshy Cheffy — Recipes</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#006094","secondary":"#795500","on-primary":"#ebf3ff","secondary-container":"#ffc967"},fontFamily:{"headline":["Fredoka"],"body":["Lexend"]},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"}}}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  .fill-icon{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+  .card-hover{transition:transform 0.2s ease,box-shadow 0.2s ease}
+  .card-hover:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,96,148,0.15)}
+</style>
+</head>
+<body class="bg-stone-100 text-[#2e2f2d] font-body overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-stone-100/80 backdrop-blur-md shadow-sm">
+  <div class="w-full max-w-[1280px] mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="bear.png" alt="Freshy Cheffy Bear" class="w-12 h-12 object-contain"/>
+      <div class="text-2xl font-black text-primary font-body uppercase leading-5">FRESHY<br/>CHEFFY</div>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/index">Home</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/about">About</a>
+      <a class="text-primary font-bold border-b-2 border-secondary pb-0.5" href="/recipes">Recipes</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/">Deals</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/impact">Impact</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/community">Community</a>
+    </div>
+    <a href="/community" class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold shadow-lg hover:brightness-110 transition-all">Sign Up</a>
+  </div>
+</nav>
+
+<main class="pt-24 pb-24">
+  <!-- Header -->
+  <section class="px-12 pb-12">
+    <div class="w-full max-w-[1280px] mx-auto flex flex-col gap-4">
+      <h1 class="font-headline text-6xl text-primary leading-tight">The Daily Catch</h1>
+      <p class="text-zinc-600 text-lg leading-7 max-w-[576px]">Fresh inspiration from the shoreline to your kitchen. Discover seasonal flavors curated by the community.</p>
+    </div>
+  </section>
+
+  <!-- Recipe Grid -->
+  <section class="px-12">
+    <div class="w-full max-w-[1280px] mx-auto grid grid-cols-12 gap-6">
+
+      <!-- Large card -->
+      <div class="col-span-12 md:col-span-5 bg-white rounded-[32px] overflow-hidden shadow-sm card-hover cursor-pointer">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&h=340&fit=crop" alt="Summer Tide Salmon" class="w-full h-64 object-cover"/>
+          <span class="absolute top-4 left-4 bg-orange-300 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Fresh Catch</span>
+        </div>
+        <div class="p-6 flex flex-col gap-3">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="text-zinc-600 text-xs ml-1">(4.8)</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary">Summer Tide Salmon</h3>
+          <p class="text-zinc-600 text-sm leading-5">"The honey citrus glaze perfectly captures that late-summer Friday-favorite vibe."</p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded-full">#SalmonVibes</span>
+            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">#LBFresh</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medium card -->
+      <div class="col-span-12 md:col-span-4 bg-white rounded-[32px] overflow-hidden shadow-sm card-hover cursor-pointer">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=280&fit=crop" alt="The Shoreline Bowl" class="w-full h-56 object-cover"/>
+        </div>
+        <div class="p-6 flex flex-col gap-3">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star_half</span>
+            <span class="text-zinc-600 text-xs ml-1">(4.5)</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary">The Shoreline Bowl</h3>
+          <p class="text-zinc-600 text-sm leading-5">"Goodness in a bowl. Chef's kiss for meal prepping before a beach day."</p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded-full">#HealthyVibes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trending card -->
+      <div class="col-span-12 md:col-span-3 bg-primary rounded-[32px] overflow-hidden card-hover cursor-pointer relative">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91798d6590?w=300&h=320&fit=crop" alt="Golden Hour Tacos" class="w-full h-48 object-cover opacity-80"/>
+        <span class="absolute top-4 right-4 bg-orange-300 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Trending</span>
+        <div class="p-6 flex flex-col gap-2">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-secondary-container text-sm fill-icon">star</span>
+            <span class="text-white/60 text-xs ml-1">(4.9)</span>
+          </div>
+          <h3 class="font-headline text-xl text-white">Golden Hour Tacos</h3>
+          <p class="text-white/70 text-xs leading-4">"The cilantro lime crema changes everything."</p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">#Seafood</span>
+            <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">#Inspired</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-span-12 md:col-span-4 bg-white rounded-[32px] overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=400&h=240&fit=crop" alt="Sun-Drenched Rigatoni" class="w-full h-48 object-cover"/>
+        <div class="p-6 flex flex-col gap-2">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="text-zinc-600 text-xs ml-1">(4.7)</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary">Sun-Drenched Rigatoni</h3>
+          <p class="text-zinc-600 text-sm leading-5">"I sourced some locally sourced sea salt and it completely elevated the roasted tomatoes."</p>
+          <div class="flex gap-2 mt-2 flex-wrap">
+            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">#Vegetarian</span>
+            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">#PastaDay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-4 bg-white rounded-[32px] overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=240&fit=crop" alt="Midnight Pier Pizza" class="w-full h-48 object-cover"/>
+        <div class="p-6 flex flex-col gap-2">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star_half</span>
+            <span class="text-zinc-600 text-xs ml-1">(4.7)</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary">Midnight Pier Pizza</h3>
+          <p class="text-zinc-600 text-sm leading-5">"That sourdough crust is unbelievable. Best around when it's (not fresh) with a cool breeze."</p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded-full">#SourdoughVibes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-12 md:col-span-4 bg-white rounded-[32px] overflow-hidden shadow-sm card-hover cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=240&fit=crop" alt="Morning Surf Toast" class="w-full h-48 object-cover"/>
+        <div class="p-6 flex flex-col gap-2">
+          <div class="flex gap-1">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="text-zinc-600 text-xs ml-1">(4.8)</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary">Morning Surf Toast</h3>
+          <p class="text-zinc-600 text-sm leading-5">"Classic for a reason. Added some micro-greens for some punch."</p>
+          <div class="flex gap-2 mt-2">
+            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">#GoodMorning</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary w-full pt-20 pb-12">
+  <div class="w-full max-w-[1280px] mx-auto px-12 grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-3 flex flex-col gap-6">
+      <div class="flex items-center gap-2">
+        <img src="bear.png" alt="Freshy Cheffy Bear" class="w-14 h-14 object-contain"/>
+        <div class="font-headline text-3xl text-stone-100 font-black uppercase leading-9">Freshy<br/>Cheffy</div>
+      </div>
+      <p class="text-stone-100/80 text-sm leading-6">© 2024 Freshy Cheffy. Hand-caught community vibes from the digital shoreline.</p>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Company</div>
+      <a href="/about" class="text-stone-100/80 text-sm hover:text-white transition-colors">Our Mission</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Sustainability Report</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Community</div>
+      <a href="#" class="text-white underline text-sm">Local Sourcing</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Privacy Policy</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Stay Salty</div>
+      <div class="flex gap-4">
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">rss_feed</span></button>
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">share</span></button>
+      </div>
+    </div>
+    <div class="col-span-6 md:col-span-3 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">The Shoreline Mailer</div>
+      <div class="flex h-9">
+        <input type="email" placeholder="Email" class="flex-1 px-4 py-2.5 bg-white/10 rounded-l-full border-none outline-none text-white placeholder-white/40"/>
+        <button class="px-4 py-2.5 bg-yellow-800 rounded-r-full"><span class="material-symbols-outlined text-stone-100 text-sm">arrow_forward</span></button>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="fixed bottom-8 left-8 z-50">
+  <button class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
+    <span class="material-symbols-outlined text-primary text-2xl fill-icon">auto_awesome</span>
+    <span class="absolute left-16 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-[32px] shadow-xl px-4 py-2 text-primary text-sm font-bold whitespace-nowrap">Ask Cheffy AI</span>
+  </button>
+</div>
+</body>
+</html>

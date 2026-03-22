@@ -3,7 +3,6 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import pandas as pd
-import os
 
 app = Flask(__name__)
 CORS(app)
@@ -16,8 +15,32 @@ with open('columns.pkl', 'rb') as f:
     columns = pickle.load(f)
 
 @app.route('/')
-def home():
+def deals():
     return send_from_directory('.', 'deals.html')
+
+@app.route('/index')
+def home():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/about')
+def about():
+    return send_from_directory('.', 'about.html')
+
+@app.route('/recipes')
+def recipes():
+    return send_from_directory('.', 'recipes.html')
+
+@app.route('/impact')
+def impact():
+    return send_from_directory('.', 'impact.html')
+
+@app.route('/community')
+def community():
+    return send_from_directory('.', 'community.html')
+
+@app.route('/bear.png')
+def bear():
+    return send_from_directory('.', 'bear.png')
 
 @app.route('/predict', methods=['POST'])
 def predict():

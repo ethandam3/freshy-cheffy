@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freshy Cheffy — About</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#006094","secondary":"#795500","on-primary":"#ebf3ff","on-secondary":"#fff1de","secondary-container":"#ffc967"},fontFamily:{"headline":["Fredoka"],"body":["Lexend"]},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"}}}}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  .fill-icon{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+  .card-hover{transition:transform 0.2s ease,box-shadow 0.2s ease}
+  .card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,96,148,0.12)}
+</style>
+</head>
+<body class="bg-stone-100 text-[#2e2f2d] font-body overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-stone-100/80 backdrop-blur-md shadow-sm">
+  <div class="w-full max-w-[1280px] mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="bear.png" alt="Freshy Cheffy Bear" class="w-12 h-12 object-contain"/>
+      <div class="text-2xl font-black text-primary font-body uppercase leading-5">FRESHY<br/>CHEFFY</div>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/index">Home</a>
+      <a class="text-primary font-bold border-b-2 border-secondary pb-0.5" href="/about">About</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/recipes">Recipes</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/">Deals</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/impact">Impact</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/community">Community</a>
+    </div>
+    <a href="/community" class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold shadow-lg hover:brightness-110 transition-all">Sign Up</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+  <!-- Hero -->
+  <section class="px-24 pt-16 pb-0 bg-stone-100">
+    <div class="w-full max-w-[1280px] mx-auto grid grid-cols-12 gap-12 items-center">
+      <div class="col-span-12 md:col-span-6 flex flex-col gap-6">
+        <h1 class="font-headline text-8xl text-primary leading-tight">More<br/>Than <span class="text-secondary">Looks</span></h1>
+        <p class="text-zinc-600 text-xl leading-8 max-w-[512px]">In Long Beach, we believe beauty is more than skin deep. We're on a mission to save the "misfit" produce that grocery stores reject, bringing fresh, affordable food straight to your kitchen.</p>
+        <div class="flex gap-4 flex-wrap pt-2">
+          <a href="/" class="px-10 py-4 bg-primary text-on-primary rounded-full font-bold hover:brightness-110 transition-all shadow-lg">Start Rescuing</a>
+          <a href="#story" class="px-10 py-4 bg-zinc-300 text-zinc-800 rounded-full font-bold hover:brightness-95 transition-all">Learn More</a>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-6 relative">
+        <div class="w-[520px] h-[520px] absolute top-[-4px] left-[23px] rotate-3 opacity-30 bg-cyan-200 rounded-[32px]"></div>
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=520&h=520&fit=crop" class="w-[520px] h-[520px] relative -rotate-2 rounded-[32px] shadow-2xl object-cover"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story" class="py-20 px-24 bg-stone-100">
+    <div class="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
+      <h2 class="font-headline text-5xl text-primary text-center">The Freshy Cheffy Story</h2>
+      <div class="grid grid-cols-12 gap-6">
+        <!-- Born in the LBC -->
+        <div class="col-span-12 md:col-span-7 p-12 bg-white rounded-[32px] shadow-sm flex flex-col gap-4 card-hover">
+          <div class="text-yellow-800 text-sm font-bold uppercase tracking-wider">Established 2021</div>
+          <h3 class="font-headline text-4xl text-zinc-800">Born in the LBC</h3>
+          <p class="text-zinc-600 text-lg leading-7">What started as a small neighborhood initiative in Long Beach has blossomed into a movement. We noticed that nearly 40% of perfectly good produce never leaves the farm because of minor aesthetic imperfections. Our founder, a local chef, saw an opportunity to connect these "ugly" gems with families looking to eat healthy without the high price tag.</p>
+        </div>
+        <!-- Values -->
+        <div class="col-span-12 md:col-span-5 flex flex-col gap-4">
+          <div class="p-10 bg-orange-300 rounded-[32px] flex flex-col gap-2 card-hover">
+            <span class="material-symbols-outlined text-yellow-900 text-3xl fill-icon">public</span>
+            <h4 class="font-headline text-2xl text-yellow-900">Planet First</h4>
+            <p class="text-yellow-900/80 text-base leading-6">Reducing CO2 by keeping food out of landfills.</p>
+          </div>
+          <div class="p-10 bg-cyan-200 rounded-[32px] flex flex-col gap-2 card-hover">
+            <span class="material-symbols-outlined text-sky-900 text-3xl fill-icon">wallet</span>
+            <h4 class="font-headline text-2xl text-sky-900">Wallet Friendly</h4>
+            <p class="text-sky-900/80 text-base leading-6">Up to 40% cheaper than traditional markets.</p>
+          </div>
+          <div class="p-10 bg-zinc-300 rounded-[32px] flex flex-col gap-2 card-hover">
+            <span class="material-symbols-outlined text-zinc-700 text-3xl fill-icon">groups</span>
+            <h4 class="font-headline text-2xl text-zinc-800">Community Driven</h4>
+            <p class="text-zinc-600 text-base leading-6">Supporting local farmers across the coast.</p>
+          </div>
+        </div>
+        <!-- Curated by Chefs -->
+        <div class="col-span-12 md:col-span-5 bg-primary rounded-[32px] overflow-hidden relative card-hover" style="min-height:384px">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=341&h=372&fit=crop" class="w-full h-full object-cover opacity-80 absolute inset-0"/>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-white text-xl font-bold">Curated by Chefs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="py-20 px-8">
+    <div class="w-full max-w-[1088px] mx-auto flex gap-16 flex-wrap">
+      <div class="w-80 flex-shrink-0 flex flex-col gap-6">
+        <h2 class="font-headline text-5xl text-primary leading-tight">Why It<br/>Matters.</h2>
+        <p class="text-zinc-600 text-lg leading-7">The current food system is broken. We're here to fix it, one box at a time.</p>
+      </div>
+      <div class="flex-1 flex flex-col gap-12">
+        <div class="pl-8 border-l-4 border-orange-300 flex flex-col gap-4">
+          <h3 class="font-headline text-3xl text-yellow-800">The Price of Perfection</h3>
+          <p class="text-zinc-800 text-xl leading-8">Every year, billions of pounds of food are wasted because they are the "wrong" shape, size, or color. This artificial standard drives up food costs for everyone while farmers are forced to discard their hard work.</p>
+        </div>
+        <div class="pl-8 border-l-4 border-blue-400 flex flex-col gap-3.5">
+          <h3 class="font-headline text-3xl text-primary">Rising Food Insecurity</h3>
+          <p class="text-zinc-800 text-xl leading-8">With inflation at record highs, fresh produce has become a luxury for many. By rescuing food, we can offer premium organics at prices that make sense for everyday families.</p>
+        </div>
+        <div class="pl-8 border-l-4 border-cyan-200 flex flex-col gap-3.5">
+          <h3 class="font-headline text-3xl text-cyan-800">Climate Impact</h3>
+          <p class="text-zinc-800 text-xl leading-8">Food waste in landfills produces methane, a greenhouse gas far more potent than CO2. If food waste were a country, it would be the third-largest emitter in the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coastal Commitment -->
+  <section class="py-8 px-8">
+    <div class="w-full max-w-[1088px] mx-auto rounded-[32px] overflow-hidden relative flex items-center justify-center" style="min-height:600px">
+      <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1088&h=600&fit=crop" class="absolute inset-0 w-full h-full object-cover"/>
+      <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+      <div class="relative z-10 flex flex-col items-center gap-6 px-8 text-center max-w-[672px]">
+        <h2 class="font-headline text-7xl text-white leading-tight">Our Coastal<br/>Commitment</h2>
+        <p class="text-white/90 text-xl font-light leading-8">Based out of Long Beach, California, our operations are inspired by the ocean. We use plastic-free packaging, ocean-cooled transport, and partner with local coastal farms to ensure the shortest trip from soil to table.</p>
+        <a href="/impact" class="px-12 py-5 bg-yellow-800 rounded-full text-orange-100 text-xl font-bold hover:brightness-110 transition-all shadow-xl">Explore Our Impact Report</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary w-full pt-20 pb-12 mt-8">
+  <div class="w-full max-w-[1280px] mx-auto px-12 grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-3 flex flex-col gap-6">
+      <div class="flex items-center gap-2">
+        <img src="bear.png" alt="Freshy Cheffy Bear" class="w-14 h-14 object-contain"/>
+        <div class="font-headline text-3xl text-stone-100 font-black uppercase leading-9">Freshy<br/>Cheffy</div>
+      </div>
+      <p class="text-stone-100/80 text-sm leading-6">© 2024 Freshy Cheffy. Hand-caught community vibes from the digital shoreline.</p>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Company</div>
+      <a href="/about" class="text-stone-100/80 text-sm hover:text-white transition-colors">Our Mission</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Sustainability Report</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Community</div>
+      <a href="#" class="text-white underline text-sm">Local Sourcing</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Privacy Policy</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Stay Salty</div>
+      <div class="flex gap-4">
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">rss_feed</span></button>
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100"><span class="material-symbols-outlined text-lg">share</span></button>
+      </div>
+    </div>
+    <div class="col-span-6 md:col-span-3 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">The Shoreline Mailer</div>
+      <div class="flex h-9">
+        <input type="email" placeholder="Email" class="flex-1 px-4 py-2.5 bg-white/10 rounded-l-full border-none outline-none text-white placeholder-white/40"/>
+        <button class="px-4 py-2.5 bg-yellow-800 rounded-r-full"><span class="material-symbols-outlined text-stone-100 text-sm">arrow_forward</span></button>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="fixed bottom-8 left-8 z-50">
+  <button class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
+    <span class="material-symbols-outlined text-primary text-2xl fill-icon">auto_awesome</span>
+    <span class="absolute left-16 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-[32px] shadow-xl px-4 py-2 text-primary text-sm font-bold whitespace-nowrap">Ask Cheffy AI</span>
+  </button>
+</div>
+</body>
+</html>

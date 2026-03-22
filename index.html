@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freshy Cheffy — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#006094",
+          "secondary": "#795500",
+          "surface": "#f8f6f2",
+          "on-primary": "#ebf3ff",
+          "on-secondary": "#fff1de",
+          "secondary-container": "#ffc967",
+          "on-secondary-container": "#5f4200",
+          "tertiary": "#20627b",
+        },
+        fontFamily: {
+          "headline": ["Fredoka"],
+          "body": ["Lexend"],
+          "brand": ["Plus Jakarta Sans"],
+        },
+        borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .fill-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,96,148,0.12); }
+</style>
+</head>
+<body class="bg-stone-100 text-[#2e2f2d] font-body overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-stone-100/80 backdrop-blur-md shadow-sm">
+  <div class="w-full max-w-[1280px] mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="bear.png" alt="Freshy Cheffy Bear" class="w-12 h-12 object-contain"/>
+      <div class="text-2xl font-black text-primary font-body uppercase leading-5">FRESHY<br/>CHEFFY</div>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-primary font-bold border-b-2 border-secondary pb-0.5" href="/index">Home</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/about">About</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/recipes">Recipes</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/">Deals</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/impact">Impact</a>
+      <a class="text-cyan-800 font-medium hover:text-primary transition-colors" href="/community">Community</a>
+    </div>
+    <a href="/community" class="px-8 py-3 bg-primary text-on-primary rounded-full font-bold shadow-lg hover:brightness-110 transition-all">Sign Up</a>
+  </div>
+</nav>
+
+<main class="pt-20">
+
+  <!-- Hero -->
+  <section class="py-24 bg-stone-100">
+    <div class="w-full max-w-[1280px] mx-auto px-12 flex flex-col gap-16">
+
+      <div class="flex justify-between items-end">
+        <div class="max-w-[576px] flex flex-col gap-6">
+          <h1 class="font-headline text-6xl text-primary leading-tight">Latest Innovations</h1>
+          <p class="text-zinc-600 text-lg font-medium leading-7">We're blending coastal tradition with futuristic kitchen tech.</p>
+        </div>
+        <div class="flex gap-4">
+          <button class="w-12 h-12 bg-zinc-300 rounded-full flex items-center justify-center hover:brightness-95 transition-all">
+            <span class="material-symbols-outlined text-primary">chevron_left</span>
+          </button>
+          <button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center hover:brightness-110 transition-all">
+            <span class="material-symbols-outlined text-on-primary">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-12 gap-6">
+
+        <!-- Community Recipe AI -->
+        <div class="col-span-12 md:col-span-5 bg-white rounded-[32px] shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] overflow-hidden card-hover">
+          <div class="px-12 py-16 flex flex-col">
+            <div class="text-yellow-800 text-xs font-light uppercase tracking-wider mb-4">AI Powered</div>
+            <h2 class="font-headline text-4xl text-slate-900 font-light leading-10 mb-6">Community<br/>Recipe AI</h2>
+            <p class="text-zinc-600 text-base font-light leading-6 mb-8">Our neural nets learn from local grandmas and top chefs to suggest the perfect meal based on what's fresh at your local dock.</p>
+            <a href="/" class="flex items-center gap-2 text-primary font-bold text-base hover:gap-3 transition-all w-fit">
+              Learn how it works
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=389&h=300&fit=crop" alt="Community Recipe AI" class="w-full h-64 object-cover"/>
+        </div>
+
+        <!-- Automated Rescue Sync -->
+        <div class="col-span-12 md:col-span-4 p-10 bg-primary rounded-[32px] flex flex-col justify-between card-hover">
+          <div class="flex flex-col gap-6">
+            <div class="w-16 h-16 bg-blue-400/20 rounded-2xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-blue-400 text-3xl fill-icon">sync</span>
+            </div>
+            <h2 class="font-headline text-3xl text-on-primary font-bold leading-9">Automated Rescue<br/>Sync</h2>
+            <p class="text-on-primary/70 text-base leading-6">Instantly connects your pantry with surplus rescue batches from local sustainable farms.</p>
+          </div>
+          <div class="pt-8 border-t border-white/10 mt-8">
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-10 h-10 bg-slate-300 rounded-full border-2 border-primary"></div>
+                <div class="w-10 h-10 bg-slate-400 rounded-full border-2 border-primary"></div>
+                <div class="w-10 h-10 bg-slate-500 rounded-full border-2 border-primary"></div>
+              </div>
+              <span class="text-on-primary text-sm font-medium">Join 2k+ Rescuers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature pills -->
+        <div class="col-span-12 md:col-span-3 flex flex-col gap-4">
+          <div class="p-8 bg-zinc-300/30 rounded-[32px] outline outline-1 outline-neutral-400/20 flex flex-col gap-3 card-hover">
+            <div class="text-slate-900 text-xl font-light leading-7">Hyper-Local Tide Alerts</div>
+            <p class="text-zinc-600 text-sm font-light leading-5">Receive notifications when specific local catches hit the market near you.</p>
+            <span class="text-yellow-800 text-xs font-black uppercase">Upcoming Idea</span>
+          </div>
+          <div class="p-8 bg-zinc-300/30 rounded-[32px] outline outline-1 outline-neutral-400/20 flex flex-col gap-3 card-hover">
+            <div class="text-slate-900 text-xl font-light leading-7">Solar Kitchen Grids</div>
+            <p class="text-zinc-600 text-sm font-light leading-5">Peer-to-peer energy sharing for community kitchen collectives.</p>
+            <span class="text-yellow-800 text-xs font-black uppercase">Research Phase</span>
+          </div>
+          <div class="p-8 bg-zinc-300/30 rounded-[32px] outline outline-1 outline-neutral-400/20 flex flex-col gap-3 card-hover">
+            <div class="text-slate-900 text-xl font-light leading-7">Bio-Packaging Loop</div>
+            <p class="text-zinc-600 text-sm font-light leading-5">Seaweed-based compostable delivery pods for zero-waste logistics.</p>
+            <span class="text-yellow-800 text-xs font-black uppercase">Concept Only</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-32 bg-stone-100">
+    <div class="w-full max-w-[1280px] mx-auto px-12 flex flex-col items-center gap-20">
+      <div class="max-w-[672px] flex flex-col items-center gap-6">
+        <h2 class="font-headline text-5xl text-primary text-center leading-tight">What Our Cheffies Say</h2>
+        <p class="text-zinc-600 text-lg text-center leading-7">Real stories from the shoreline kitchen community.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+        <div class="p-8 bg-white rounded-[32px] shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] flex flex-col items-center card-hover">
+          <div class="w-24 h-24 rounded-full ring-8 ring-secondary-container ring-offset-4 overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+          </div>
+          <p class="text-zinc-800 text-lg text-center leading-7 mb-6">"The AI recommended a fish taco recipe using locally caught rockfish I didn't even know was in season. Truly life-changing!"</p>
+          <div class="text-primary font-bold">Sarah J.</div>
+          <div class="text-zinc-600 text-xs uppercase tracking-wider mt-1">Home Chef, Long Beach</div>
+        </div>
+        <div class="p-8 bg-white rounded-[32px] shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] flex flex-col items-center card-hover">
+          <div class="w-24 h-24 rounded-full ring-8 ring-secondary-container ring-offset-4 overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+          </div>
+          <p class="text-zinc-800 text-lg text-center leading-7 mb-6">"Automated Rescue Sync has reduced my weekly grocery bill by 40% while supporting our local farmers. It's a no-brainer."</p>
+          <div class="text-primary font-bold">Marcus T.</div>
+          <div class="text-zinc-600 text-xs uppercase tracking-wider mt-1">Sustainability Advocate</div>
+        </div>
+        <div class="p-8 bg-white rounded-[32px] shadow-[0px_24px_48px_-12px_rgba(0,119,182,0.08)] flex flex-col items-center card-hover">
+          <div class="w-24 h-24 rounded-full ring-8 ring-secondary-container ring-offset-4 overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=face" class="w-full h-full object-cover"/>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+            <span class="material-symbols-outlined text-yellow-800 text-sm fill-icon">star</span>
+          </div>
+          <p class="text-zinc-800 text-lg text-center leading-7 mb-6">"The community vibes here are incredible. I've swapped more than just recipes; I've made actual friends through the app."</p>
+          <div class="text-primary font-bold">Elena R.</div>
+          <div class="text-zinc-600 text-xs uppercase tracking-wider mt-1">Community Lead</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary w-full pt-40 pb-24">
+  <div class="w-full max-w-[1280px] mx-auto px-12 grid grid-cols-12 gap-8">
+    <div class="col-span-12 md:col-span-3 flex flex-col gap-6">
+      <div class="flex items-center gap-2">
+        <img src="bear.png" alt="Freshy Cheffy Bear" class="w-14 h-14 object-contain"/>
+        <div class="font-headline text-3xl text-stone-100 font-black uppercase leading-9">Freshy<br/>Cheffy</div>
+      </div>
+      <p class="text-stone-100/80 text-sm leading-6">© 2024 Freshy Cheffy. Hand-caught community vibes from the digital shoreline. Connecting you to the soil and the sea.</p>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Company</div>
+      <a href="/about" class="text-stone-100/80 text-sm hover:text-white transition-colors">Our Mission</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Sustainability Report</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Community</div>
+      <a href="#" class="text-white underline text-sm hover:text-white/80 transition-colors">Local Sourcing</a>
+      <a href="#" class="text-stone-100/80 text-sm hover:text-white transition-colors">Privacy Policy</a>
+    </div>
+    <div class="col-span-6 md:col-span-2 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">Stay Salty</div>
+      <div class="flex gap-4">
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100 hover:bg-stone-100/30 transition-all">
+          <span class="material-symbols-outlined text-lg">rss_feed</span>
+        </button>
+        <button class="w-10 h-10 bg-stone-100/20 rounded-full flex items-center justify-center text-stone-100 hover:bg-stone-100/30 transition-all">
+          <span class="material-symbols-outlined text-lg">share</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-span-6 md:col-span-3 flex flex-col gap-4">
+      <div class="text-orange-300 text-lg font-bold font-headline">The Shoreline Mailer</div>
+      <div class="flex h-9">
+        <input type="email" placeholder="Email" class="flex-1 px-4 py-2.5 bg-white/10 rounded-l-full border-none outline-none text-white placeholder-white/40 text-base font-light"/>
+        <button class="px-4 py-2.5 bg-yellow-800 rounded-r-full flex items-center justify-center hover:brightness-110 transition-all">
+          <span class="material-symbols-outlined text-stone-100 text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB -->
+<div class="fixed bottom-8 left-8 z-50">
+  <button class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
+    <span class="material-symbols-outlined text-primary text-2xl fill-icon">auto_awesome</span>
+    <span class="absolute left-16 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-[32px] shadow-xl px-4 py-2 text-primary text-sm font-bold whitespace-nowrap">Ask Cheffy AI</span>
+  </button>
+</div>
+
+</body>
+</html>

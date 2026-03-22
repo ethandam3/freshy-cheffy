@@ -203,10 +203,67 @@
   </div>
 </footer>
 <div class="fixed bottom-8 left-8 z-50">
-  <button class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
+  <button onclick="toggleChat()" class="w-14 h-14 bg-white rounded-full shadow-2xl border border-primary/10 flex items-center justify-center hover:scale-110 transition-transform group relative">
     <span class="material-symbols-outlined text-primary text-2xl fill-icon">auto_awesome</span>
-    <span class="absolute left-16 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-[32px] shadow-xl px-4 py-2 text-primary text-sm font-bold whitespace-nowrap">Ask Cheffy AI</span>
   </button>
 </div>
+
+<div id="chat-window" class="fixed bottom-28 left-8 z-50 hidden w-80 bg-white rounded-[24px] shadow-2xl border border-primary/10 flex flex-col overflow-hidden" style="height:420px">
+  <div class="bg-primary px-4 py-3 flex items-center gap-3">
+    <img src="/bear.png" class="w-8 h-8 object-contain"/>
+    <div>
+      <div class="text-white font-bold text-sm">Cheffy AI</div>
+      <div class="text-white/70 text-xs">Powered by Gemini</div>
+    </div>
+  </div>
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
+    <div class="bg-primary/10 text-primary text-sm rounded-2xl rounded-tl-none px-3 py-2 max-w-[85%]">
+      Hey! I'm Cheffy 🐻 Ask me anything about recipes, ugly produce, or reducing food waste!
+    </div>
+  </div>
+  <div class="p-3 border-t border-primary/10 flex gap-2">
+    <input id="chat-input" type="text" placeholder="Ask Cheffy..." onkeydown="if(event.key==='Enter') sendChat()" class="flex-1 px-3 py-2 text-sm bg-surface-container-low rounded-full border-none outline-none focus:ring-2 focus:ring-primary"/>
+    <button onclick="sendChat()" class="w-9 h-9 bg-primary rounded-full flex items-center justify-center hover:brightness-110 transition-all flex-shrink-0">
+      <span class="material-symbols-outlined text-white text-sm">send</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  function toggleChat() {
+    const win = document.getElementById('chat-window');
+    win.classList.toggle('hidden');
+    if (!win.classList.contains('hidden')) {
+      document.getElementById('chat-input').focus();
+    }
+  }
+
+  async function sendChat() {
+    const input = document.getElementById('chat-input');
+    const messages = document.getElementById('chat-messages');
+    const msg = input.value.trim();
+    if (!msg) return;
+    input.value = '';
+
+    messages.innerHTML += `<div class="bg-primary text-white text-sm rounded-2xl rounded-tr-none px-3 py-2 max-w-[85%] self-end ml-auto">${msg}</div>`;
+    messages.innerHTML += `<div id="typing" class="bg-primary/10 text-primary text-sm rounded-2xl rounded-tl-none px-3 py-2 max-w-[85%] animate-pulse">Cheffy is thinking...</div>`;
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const res = await fetch('http://127.0.0.1:5000/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+      const data = await res.json();
+      document.getElementById('typing').remove();
+      messages.innerHTML += `<div class="bg-primary/10 text-primary text-sm rounded-2xl rounded-tl-none px-3 py-2 max-w-[85%]">${data.reply}</div>`;
+      messages.scrollTop = messages.scrollHeight;
+    } catch (err) {
+      document.getElementById('typing').remove();
+      messages.innerHTML += `<div class="bg-red-100 text-red-600 text-sm rounded-2xl px-3 py-2 max-w-[85%]">Couldn't reach Cheffy. Make sure Flask is running!</div>`;
+    }
+  }
+</script>
 </body>
 </html>

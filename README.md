@@ -93,6 +93,7 @@ http://127.0.0.1:5000
 ## 👤 Team
 
 **Ethan Dam** — Data Science, UC San Diego  
+**Lauren Tran** — Marketing, CSU Long Beach  
 BeachHacks 9.0 — Long Beach, CA
 
 ---
